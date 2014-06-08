@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <!-- disable zooming -->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=0" />
+
+    <title>Cube Slider</title>
+
+    <link rel="stylesheet" href="http://desandro.github.io/3dtransforms/css/style.css" media="screen" />
+
+
+    <style media="screen">
+
+        .cubeSliderContainer {
+
+            display: table;
+
+        }
+
+        .cubeContainer {
+            position: relative;
+            float: left;
+            margin-right: 15px;
+            border: 1px solid #CCC;
+            -webkit-perspective: 1000px;
+            -moz-perspective: 1000px;
+            -o-perspective: 1000px;
+            perspective: 1000px;
+        }
+
+        .cubeContainer > .cube {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .cubeContainer > .cube > figure {
+            display: block;
+            position: absolute;
+        }
+
+        .cubeContainer > .cube.panels-backface-invisible > figure {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>Cube Slider - Tutorial</h1>
+
+<section class="cubeSliderContainer" id="cubeSliderContainer"></section>
+
+<br>
+
+<script src="cubeslider.js"></script>
+
+<script>
+
+    var container = document.getElementById('cubeSliderContainer');
+
+    var options = {
+
+        sizes : { width: 228, height: 137 },
+
+        speed: 1000,
+
+        sensitivity: 25,
+
+        childrens : {
+
+            front : '<img src="http://i1.medyaspor.com/news/spot/2014/06/kartal-in-yeni-10-numarasi-konustu-23442.jpg">',
+
+            top : '<img src="http://i1.medyaspor.com/news/spot/2014/06/almanlar-yense-de-sokta-23439.jpg">',
+
+            back : '<img src="http://i3.medyaspor.com/gallery/spot/2014/06/dunya-kupasi-na-en-cok-futbolcu-gonderen-kulupler-658.jpg">',
+
+            bottom : '<img src="http://i2.medyaspor.com/news/spot/2014/06/ergun-muslera-ve-sneijder-satilabilir-23419.jpg">'
+
+        }
+
+    };
+
+    new CubeSlider(container, options);
+
+    new CubeSlider(container, options);
+
+    new CubeSlider(container, options);
+
+    new CubeSlider(container, options);
+
+</script>
+
+
+<footer>
+    <p id="disclaimer">Sorry, your browser does not support CSS 3D transforms. Try viewing this page in <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/channel/">Firefox Aurora</a>, or on an iOS device.</p>
+</footer>
+
+</body>
+</html>
